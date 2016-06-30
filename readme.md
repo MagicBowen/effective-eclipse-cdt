@@ -79,3 +79,50 @@ Clion目前是收费的，免费版可以试用30天。
 上面是本人对IDE的一些看法，分享了我自己使用各种c\++ IDE的切身感受。由于c\++的应用环境比较多样，构建过程比较自由，依赖的外部条件比较多，而且语言也相对复杂，很多语法例如宏、模板特化、函数重载等都会增加IDE的解析难度，所以做好一款c\++ IDE还是很难的，必须得承认目前为止还没有任何一款能够做到java领域的成熟度。但还是得说新版本的eclipse-cdt在各个方面做的还是很不错的，如果能够合理的配置eclipse-cdt，并且熟练掌握它的操作方式，绝对可以帮助你提高c\++的开发效率。
 
 下文将分享一下自己的eclipse-cdt配置，以及一些常用的可以提高效率的操作方式。
+
+## Global configurations
+ -
+ -- font: Source Code Pro
+ -- font size: 10
+ -- insert space for tab
+ -- C\++ code style : code template : C\ss++ default header and source file; remove the file comments!
+ -- Code Style : add new formatter : COCK
+ -- Name Style : include guard : UUID
+ -	- Test file name format : TestMyClass.cpp
+ -- Organize Includes:
+ -	- ban `Allow reordering of includes`
+ -- Editor-> Folding : ban `Enable folding when opening a new editor`
+ -- Editor->Syntax Coloring->Macro reference : to red, bold
+ -- Editor->Templates : add `cn` for class name : `${file_base}::`
+ -- Editor->File Types : add `*.tcc` for parsing by `C++ header file`
+ 
+## Project configurations
+ -- new project
+ -- import project
+ -- project name
+ -- include path
+ -- c++11 support
+ -- outer compile
+
+## operations
+
+ -- open file
+ -- find resource
+ -- find reference
+ -- method invoke
+ -- jump to defination
+ -- ctrl + H
+ -- new folder / file
+ -- class inheritance
+ -- function override
+ -- rename class
+ -- rename file/ move folder
+ -- add include
+ -- copy line ， move line
+ -- comment
+ -- recent files
+ -- switch view
+ -- format code
+ -- rebuild index
+ -- macro spread
+ -- alt + shift + a
