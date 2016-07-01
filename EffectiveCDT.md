@@ -226,6 +226,8 @@ eclipse &
 
 其余的主要配置，可以通过 `File -> Export -> General -> Preferences` 进行导出。勾选你要导出的选项，然后将其导出为一个epf文件。
 
+![export epf](./pics/export-epf.png)
+
 关于前面介绍的Code Formatter和全局配置我已经导出了，上传在[github](https://github.com/MagicBowen/eclipse-config)。
 
 其中global-config.epf是全局配置，选择 `File -> Import -> General -> Preferences` 将其导入eclipse。
