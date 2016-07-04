@@ -240,7 +240,7 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 ### 新建工程
 
-通过`File -> New -> C\++ Project`来创建一个新的C\++工程。如下图，eclipse支持创建几种不同类型的工程；
+通过`File -> New -> C++ Project`来创建一个新的C\++工程。如下图，eclipse支持创建几种不同类型的工程；
 
 ![project new](./pics/project-new.png)
 
@@ -254,7 +254,7 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 	- GNU Autotools：该类项目默认选择用GUN Autotools进行构建管理，eclipse不会为其自动生成makefile。在项目的属性对话框里面将会有一个对GNU Autotools的配置页面。
 
-	- Executable：可执行项目，eclipse默认会为其生成makefile。该类工程允许在工程属性对话框里面深入配置各种编译链接参数，这些配置的修改都会决定自动生成的makefile内容。`Empty Project`和`Hello World C\++ Project`的区别在于后者会自动为项目创建一个src目录以及一个实现了输出“hello world”的cpp文件。
+	- Executable：可执行项目，eclipse默认会为其生成makefile。该类工程允许在工程属性对话框里面深入配置各种编译链接参数，这些配置的修改都会决定自动生成的makefile内容。`Empty Project`和`Hello World C++ Project`的区别在于后者会自动为项目创建一个src目录以及一个实现了输出“hello world”的cpp文件。
 
 	- Makefile Project：该类工程默认用户使用自定义的makefile，不会为项目自动创建makefile。该类工程的工程属性对话框里面默认不可以对编译、链接参数进行配置，它会使用用户makefile中的参数进行项目解析。
 
@@ -281,11 +281,11 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 ![project properties](./pics/project-properties.png)
 
-在工程属性对话框里面，最为重要的是`C/C\++ Build`以及`C/C\++ General`这两个配置集。这两个配置集包含所有和工程构建相关的配置。如果你要用eclipse进行构建，那么这里面的东西就极为重要，因为它决定了项目能否被正确构建。如果你有自己的构建脚本，这里面的东西仍然极为重要，因为它决定了项目代码能否被eclipse正确解析！
+在工程属性对话框里面，最为重要的是`C/C++ Build`以及`C/C++ General`这两个配置集。这两个配置集包含所有和工程构建相关的配置。如果你要用eclipse进行构建，那么这里面的东西就极为重要，因为它决定了项目能否被正确构建。如果你有自己的构建脚本，这里面的东西仍然极为重要，因为它决定了项目代码能否被eclipse正确解析！
 
-#### `C/C\++ Build`配置集
+#### `C/C++ Build`配置集
 
-在工程属性对话框中选择`C/C\++ Build`对构建进行配置：
+在工程属性对话框中选择`C/C++ Build`对构建进行配置：
 
 - Configuration： 这里可以设置构建目标。Executable类型的工程，默认有`Debug`和`Release`两种构建目标可以选择，Makefile类型的工程只有一个`Default`目标。你可以分别配置每一类目标下的编译构建参数。每种构建目标的编译链接参数一般为了不同目的而配置。例如一般在`Debug`目标下我们在配置编译参数时会选择不打开优化选项，但是会设置为目标文件构建debug信息；而`Release`目标的构建参数则选择不构建debug信息，但是需要打开对应的编译优化选项。构建目标后面的`[Active]`指eclipse默认选择的构建配置（当按快捷键`Ctrl + b`进行构建时）。点击后面的`Manage Configurations...`可以对构建目标进行增加、删除和修改。如下图新增了一种构建目标build，将其设为active。
 
@@ -301,7 +301,7 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
         ![internal build](./pics/internal-build.png)
 
-    - Makefile generaton : 配置eclipse是否自动产生makefile。如果工程类型是executable，这里默认是勾选状态；否则默认是不勾选的。只有这里勾选了让eclipse自行产生makefile，工程属性里面才会出现配置编译器、链接器参数的对话框，否则是看不见的（具体在`Project properties -> C/C\++ Build -> Settings`）。
+    - Makefile generaton : 配置eclipse是否自动产生makefile。如果工程类型是executable，这里默认是勾选状态；否则默认是不勾选的。只有这里勾选了让eclipse自行产生makefile，工程属性里面才会出现配置编译器、链接器参数的对话框，否则是看不见的（具体在`Project properties -> C/C++ Build -> Settings`）。
 
 	- Build location：设置构建产物的位置。默认在工程根目录下的第一级子目录，子目录的名称固定和当前的`Configuration`栏所选的构建目标相同。
 
@@ -309,11 +309,11 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 	![build behavior](./pics/build-behavior.png)
 
-- `C/C\++ Build -> Settings`: 如前面所说，只有勾选了让eclipse自行产生makefile，这里面才会有进行编译、链接参数配置的对话框，否则是看不见的。如下图：
+- `C/C++ Build -> Settings`: 如前面所说，只有勾选了让eclipse自行产生makefile，这里面才会有进行编译、链接参数配置的对话框，否则是看不见的。如下图：
 
 	![build settings](./pics/build-settings.png)
 
-    可以看到这里可以设置编译、链接的各种具体参数。例如上图中对于`GCC C\++ Compiler`设置的命令名称是`g\++`，`All options`里面是所有的编译参数。这里的编译参数其实都是根据底下的一系列选项设置汇总过来的。
+    可以看到这里可以设置编译、链接的各种具体参数。例如上图中对于`GCC C++ Compiler`设置的命令名称是`g++`，`All options`里面是所有的编译参数。这里的编译参数其实都是根据底下的一系列选项设置汇总过来的。
     - `Dialect`里面可以选择支持的C\++标准，支持C\++98、C\++0x以及C\++1y几个选项。
     - `Preprocessor`里面可以配置传递给编译器的预编译参数。
     - `Includes`配置头文件的查找路径，以及包含特定的头文件。
@@ -324,13 +324,13 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 	如果你会写makefile，那么上述所有配置对你来说是非常轻松的，正确配置了这些参数后，eclipse就可以自动为你生成makefile执行构建了。如果你的项目已经有了构建脚本，那么你可以参照构建脚本来配置这里。
 
-#### `C/C\++ General`配置集
+#### `C/C++ General`配置集
 
-如下图，在工程属性里面选择`C/C\++ General`，可以在其子标签页中进行代码静态检查、文件类型、代码风格等一些配置。由于这些大多在eclipse全局配置中设置过了，所以如果工程没有特殊需求，这里一般不用更改了。
+如下图，在工程属性里面选择`C/C++ General`，可以在其子标签页中进行代码静态检查、文件类型、代码风格等一些配置。由于这些大多在eclipse全局配置中设置过了，所以如果工程没有特殊需求，这里一般不用更改了。
 
 ![paths and symbols](./pics/path-symbol.png)
 
-在这里最重要的一个配置页是`Paths and Symbols`。在此可以设置头文件的搜索路径、预编译宏、链接库搜索路径、链接库名称等等。这些设置关系着eclipse能否正确构建以及解析代码符号。可以看到这里的一些配置和前面`C/C\++ Build -> Settings`中编译、链接参数的一些配置是重复的。由于编译链接参数需要针对不同的构建目标分别配置，容易有重复；而且一旦不选择让eclipse生成makefile，编译链接参数配置就不可见。但是无论是否让eclipse生成makefile，它总要能正确解析代码的，所以eclipse在这里也提供了类似的配置选项。
+在这里最重要的一个配置页是`Paths and Symbols`。在此可以设置头文件的搜索路径、预编译宏、链接库搜索路径、链接库名称等等。这些设置关系着eclipse能否正确构建以及解析代码符号。可以看到这里的一些配置和前面`C/C++ Build -> Settings`中编译、链接参数的一些配置是重复的。由于编译链接参数需要针对不同的构建目标分别配置，容易有重复；而且一旦不选择让eclipse生成makefile，编译链接参数配置就不可见。但是无论是否让eclipse生成makefile，它总要能正确解析代码的，所以eclipse在这里也提供了类似的配置选项。
 
 这里`Includes`、`Symbols`、`Libraries`、`Library Paths`的配置，和前面编译链接参数配置一样，需要根据工程的具体构建情况去填写。此处只详细说一下`Source Location`选项。
 
@@ -340,13 +340,13 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 如上图，在`Source Location`中点击`Link Folder...`，然后在弹出的对话框里面点击`Advanced`，勾选`Link to folder in the file system`，接下来点击`Browse...`在文件系统内选择需要关联的目录，之后该外部目录就被映射到eclipse工程内了。在此为了让配置和具体位置无关，可以选择使用`Variables...`，例如`${PROJECT_LOC}`表示当前工程的目录位置，`${WORKSPACE_LOC}`表示eclipse workspace的目录位置。
 
-如上就是工程的所有重要的配置了。一旦配置正确，eclipse就能帮你执行构建了。现实中一般工程都有构建脚本，配置工程属性主要是为了让eclipse能够正确解析代码，这时主要配置好`C/C\++ General -> Paths and Symbols`就好了。如果需要eclipse能够解析C\++11或者其它的C\++标准的语法和stl库符号，那么还需在`C/C\++ Build -> Settings`中配置编译参数支持对应的C\++标准。
+如上就是工程的所有重要的配置了。一旦配置正确，eclipse就能帮你执行构建了。现实中一般工程都有构建脚本，配置工程属性主要是为了让eclipse能够正确解析代码，这时主要配置好`C/C++ General -> Paths and Symbols`就好了。如果需要eclipse能够解析C\++11或者其它的C\++标准的语法和stl库符号，那么还需在`C/C++ Build -> Settings`中配置编译参数支持对应的C\++标准。
 
 ### 导出工程配置
 
 配置好的工程构建属性可以导出然后共享给项目其他同事。
 
-在菜单中选择`File -> Export -> C/C\++ -> C/C\++ Project Settings`，然后选择对应的工程，选择构建目标，可以将该工程对应构建目标下的配置导出成一个xml文件。这样别人就可以通过`File -> Import -> C/C\++ -> C/C\++ Project Settings`再将其导入了。
+在菜单中选择`File -> Export -> C/C++ -> C/C++ Project Settings`，然后选择对应的工程，选择构建目标，可以将该工程对应构建目标下的配置导出成一个xml文件。这样别人就可以通过`File -> Import -> C/C++ -> C/C++ Project Settings`再将其导入了。
 
 ![export project](./pics/export-project.png)
 
