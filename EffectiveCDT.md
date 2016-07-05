@@ -389,37 +389,102 @@ Perspective翻译过来是“透视图”，其实就是按照一定目的选择
 
 在前面的介绍中我们说view一般在perspective下被安排好了位置，从一个view切换到另一个view需要转移焦点。但是eclipse为了可以更加快捷的操作，为很多常用的view提供了quick view。所谓quick view是指在当前view上以一个浮现式菜单弹出另一个view的常用功能，你可以在当前view上不转移焦点就直接操作另一个view，避免了不少键盘操作。熟练掌握quick view可以让你的键盘操作效率更高，更加有行云流水的感觉。
 
-例如前面的例子中我们从`Editor`视图切换到`Project Explorer`视图下创建了一个文件。其实我们可以直接在`Editor`视图下通过`Alt + Shift + n`调出quick view完成文件创建。
+例如前面的例子中我们从`Editor`视图切换到`Project Explorer`视图下创建了一个文件。其实我们可以直接在`Editor`视图下通过`Alt + Shift + N`调出quick view完成文件创建。
 
 ![create file](./pics/new-file.gif)
 
-上面介绍的`Alt + Shift + n`是会经常使用到的，利用它除了可以快速创建文件，还可以快速创建工程、目录等。除此之外还有如下视图的quick view是非常常用的：
+上面介绍的`Alt + Shift + N`是会经常使用到的，利用它除了可以快速创建文件，还可以快速创建工程、目录等。除此之外还有如下的quick view也是非常常用的：
 
 - 文件大纲（Outline View）
 
 	文件大纲视图一般位于`C/C++ Perspective`的最右侧，通过该视图我们可以看到当前代码文件的大纲，可以直接跳到当前文件的任意符号处。
 
-    在`Editor`视图下我们可以通过`Ctrl + o`直接调出`Outline`的quick view，然后通过搜索或者上下键选择来跳转到某一符号处。正是因为可以如此方便地调出quick outline，所以我一般会把`Editor`视图右边的辅助视图集窗口最小化以扩大代码区的面积。
+    在`Editor`视图下我们可以通过`Ctrl + O`直接调出`Outline`的quick view，然后通过搜索或者上下键选择来跳转到某一符号处。正是因为可以如此方便地调出quick outline，所以我一般会把`Editor`视图右边的辅助视图集窗口最小化以扩大代码区的面积。
 
     ![quick outline](./pics/quick-outline.gif)
 
 - 继承关系（Hierarchy View）
 
-	选中类名然后敲`F4`，继承关系视图会出现在`Editor`底下的的视图集窗口里。然后在该视图下，可以看类的继承关系和接口的覆写关系。
+	大多数eclipse用户都知道选中类名然后敲`F4`，继承关系视图会出现在`Editor`底下的的视图集窗口里。然后在该视图下，可以看类的继承关系和接口的覆写关系。
 
     ![hierarchy](./pics/hierarchy.gif)
 
-    上面示例中可以看到从`Hierarchy View`返回`Editor`需要切换视图。但是如果用`Ctrl + t`调出quick hierarchy，可以在浏览完继承关系后直接返回`Editor`的对应位置上。如下所示：
+    上面示例中可以看到从`Hierarchy View`返回`Editor`需要切换视图焦点。但是如果用`Ctrl + T`调出quick hierarchy，则可以在浏览完继承关系后直接返回到`Editor`的对应位置上。如下所示：
 
     ![quick hierarchy](./pics/quick-hierarchy.gif)
 
-    Quick hierarchy是我最喜欢用的quick view，它可以让类的继承关系跳转变得非常快捷。而且当你在一个虚方法的签名上调出quick hierarchy，只会显示该接口被覆写的类层次。所以让我们记住这个快捷键`Ctrl + t`。
+    Quick hierarchy是我最喜欢的feature，它可以让类的继承关系跳转变得非常快捷。而且当你在一个虚方法的签名上调出quick hierarchy，只会显示该接口被覆写的类层次。所以让我们记住这个快捷键`Ctrl + T`。
 
 ### Navigate
 
+如下是一些比较常用的导航快捷键。
+
+- 文件导航
+
+    - `Ctrl + Shift + R` : 跳转到指定文件。输入文件名时可以用通配符。
+    - `Ctrl + F6`， `Ctrl + Shift + F6`：跳转到前一个或者后一个已经打开过的文件。
+    - `Ctrl + E`：以quick view的方式列出已经打开过的所有文件列表，可以通过搜索或者上下键选择跳转到的目标文件。
+    - `Ctrl + Tab`：在类的头文件和源文件之间互相跳转。
+
+- 符号导航
+
+    - `Ctrl + Shift + T`：跳转到指定符号。可以是类名、全局变量、宏等等；输入符号名时可以使用通配符。
+    - `F3`：跳转到定义。
+    - `Alt + ←`：跳转到前一个编辑的页面。
+    - `Alt + →`：跳转到后一个编辑的页面。
+    - `Ctrl + Q`：跳转到最后编辑过的页面符号处。
+    - `Ctrl + L`：跳转到指定行。
+
 ### Search
 
+Eclipse主要的搜索快捷键如下：
+
+- `Ctrl + Shift + G`：查找所有对符号的引用。
+- `Ctrl + Shift + H`：查找所有函数或者变量的调用点。
+- `Ctrl + F`：本文件内搜索，可以通过`Ctrl + k`和`Ctrl + Shift + k`在所有搜索结果中上下跳转。
+- `Ctrl + H`：工程内全局搜索。在弹出的对话框里面的`C/C++ Search`只在所有代码文件里面搜索，而`File Search`则是在所有文件内搜索。
+
 ### Edit
+
+对于高效编辑来说，有太多的快捷键可说了，我们挑一些重要的略作介绍。
+
+首先你要掌握最基本的通用快捷键:
+- `Ctrl + C`：拷贝
+- `Ctrl + X`：剪贴
+- `Ctrl + V`：粘贴
+- `Ctrl + ←`：光标跳过前一符号
+- `Ctrl + →`：光标跳过后一符号
+- `Shift + ←`：选中前一个字符
+- `Shift + →`：选中后一个字符
+- `Ctrl + Shift + ←`：选中前一个符号
+- `Ctrl + Shift + →`：选中后一个符号
+
+其次你要掌握eclipse自身的一些编辑快捷键：
+- `Ctrl + D`：删除当前行
+- `Ctrl + /`：注释当前行
+- `Alt + ↑`：将当前行向上移动
+- `Alt + ↓`：将当前行向下移动
+- `Ctrl + Alt + ↑`：将当前行向上复制
+- `Ctrl + Alt + ↓`：将当前行向下复制
+
+如下示例了选择了几行代码，然后使用`Ctrl + Alt + ↓`向下复制了选中行。
+
+![copy lines](./pics/copy-lines.gif)
+
+- `Alt + /`：自动提示、补全符号；包括自定义的快捷代码块。如前面全局配置的时候我们添加了`cn`的快捷代码块，如下我们敲`cn`后再敲`Alt + /`，它帮我们自动补全为“ClassName::”。
+
+![auto class name](./pics/auto-cn.gif)
+
+除了上述基本的编辑快捷键外，还有一些很常用的专门针对C\++语言的快捷键。
+
+- `Ctrl + Shift + N`：自动添加光标所在处符号对应的头文件。
+
+![auto include](./pics/auto-include.gif)
+
+- `Ctrl + =`：自动宏展开提示。
+
+![auto macro](./pics/auto-macro.gif)
+
 
 ### Others
 
