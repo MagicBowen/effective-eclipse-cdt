@@ -354,20 +354,81 @@ Eclipse为每个工程生成的所有配置其实都在工程目录下的`.proje
 
 ## Efficient Usage
 
+大多数介绍如何高效操作eclipse的文章都主要在介绍快捷键，本章也不例外！但如果仅仅只是快捷键列表，那大家直接google或者看eclipse帮助文档就够了！本章希望先帮大家理清各种概念，然后通过一些主要的快捷键操作场景，帮大家把之前断裂的快捷键操作串起来，以达到一种接近全键盘的行云流水般的操作境界！
+
 ### 基本概念
+
+#### Perspective
+
+Perspective翻译过来是“透视图”，其实就是按照一定目的选择和排列好的一组视图（view）的集合。例如Eclipse workbench默认处于`C/C++ Perspective`，它的布局如下图：
 
 ![workbench](./pics/workbench.jpg)
 
-如上图所示的eclipse workbench默认布局，上面是菜单栏和工具栏，下面是由四部分组成的工作区域。最左边是`Project Explorer`视图，显示当前workspace中的所有project，可以浏览每个project的目录树。中间的`Editor`视图是我们浏览、编辑代码的地方。`Editor`的右面和下面是辅助视图集合，例如常用的outline视图、console视图以及各种搜索结果视图等等，你可以根据习惯选择将哪些视图放在右面或者下面。
+上面是菜单栏和工具栏，下面是由四部分组成的工作区域。最左边是`Project Explorer`视图，显示当前workspace中的所有project，通过它可以浏览每个project的目录树。中间的`Editor`视图是我们浏览、编辑代码的地方。`Editor`的右面和下面是一些辅助视图的集合窗口，例如常用的outline视图、console视图以及各种搜索结果视图等等都在这里，你可以根据习惯选择将哪些视图放在右面或者下面。`C/C++ Perspective`如此设置和排布目的是为了尽可能方便的进行代码开发。
 
-浏览和开发代码的时候我们经常需要在各个视图之间转移焦点，比如需要从正在编辑代码的`Editor`视图跳转到`Project Explorer`视图去增加一个目录或者文件，再比如搜索了某一个函数的调用关系后需要从`Editor`视图跳转到下方的`Call Hierarchy`视图选择某一调用函数。
+除了`C/C++ Perspective`，eclipse还定义了`Debug Perspective`、`Git Perspective`、`Planning Perspective`等等，每种perspective所选择的视图和排布都是为了不同的目的。例如在`Debug Perspective`下就没有`Project Explorer`视图，而多了`Debug`和`Variable`视图，而且`Editor`视图所占的区域也小很多。如此规划就是为了用户可以方便高效地debug。
 
-在这里我们介绍的第一个提高效率的方法就是使用快捷键`Ctrl + F7`进行视图切换，这是一个很提效的技巧！很多人在`Editor`区域将快捷键使用地很好，但是一旦要切换视图就去抓鼠标。掌握了这个快捷键基本上可以让很多人直接过度到全键盘！
+不同perspective之间进行切换的快捷键是`Ctrl + F8`。按住`Ctrl`后每敲一次`F8`，光标会移到下一个perspective；按住`Ctrl + Shift`后每敲一次`F8`光标会移到前一个perspective。如下图所示，通过快捷键在`C/C++ Perspective`和`Debug Perspective`之间切换。
+
+![perspective switch](./pics/perspective.gif)
+
+#### View
+
+通过前面的介绍，我们知道一个perspective是由一组view组成。如论在哪个perspective下，我们都经常需要在不同的view之间切换焦点。例如对于我们最常处于的`C/C++ Perspective`，我们在代码开发的时候经常需要从正在编辑代码的`Editor`视图跳转到`Project Explorer`视图去增加一个目录或者文件。再比如搜索了某一个函数的调用关系后需要从`Editor`视图跳转到下方的`Call Hierarchy`视图选择某一调用函数。
 
 
-## Others
+切换视图的快捷键是`Ctrl + F7`。按住`Ctrl`后每敲一次`F7`，光标会移到下一个视图；按住`Ctrl + Shift`后每敲一次`F7`光标会移到前一个视图。
+
+如下图所示，我们通过快捷键从`Editor`视图跳转到`Project Explorer`视图下，在test目录下创建Test.cpp文件。
+
+![switch view](./pics/switch-view.gif)
+
+如果说切换perspective的快捷键用的场景并不多，那么切换视图的快捷键使用场景那可是相当之多。很多人在`Editor`区域将快捷键使用的很好，但一旦要切换视图就必须去抓鼠标，掌握了这个快捷键基本上就可以让很多人直接过渡到全键盘了！
+
+#### Quick View
+
+在前面的介绍中我们说view一般在perspective下被安排好了位置，从一个view切换到另一个view需要转移焦点。但是eclipse为了可以更加快捷的操作，为很多常用的view提供了quick view。所谓quick view是指在当前view上以一个浮现式菜单弹出另一个view的常用功能，你可以在当前view上不转移焦点就直接操作另一个view，避免了不少键盘操作。熟练掌握quick view可以让你的键盘操作效率更高，更加有行云流水的感觉。
+
+例如前面的例子中我们从`Editor`视图切换到`Project Explorer`视图下创建了一个文件。其实我们可以直接在`Editor`视图下通过`Alt + Shift + n`调出quick view完成文件创建。
+
+![create file](./pics/new-file.gif)
+
+上面介绍的`Alt + Shift + n`是会经常使用到的，利用它除了可以快速创建文件，还可以快速创建工程、目录等。除此之外还有如下视图的quick view是非常常用的：
+
+- 文件大纲（Outline View）
+
+	文件大纲视图一般位于`C/C++ Perspective`的最右侧，通过该视图我们可以看到当前代码文件的大纲，可以直接跳到当前文件的任意符号处。
+
+    在`Editor`视图下我们可以通过`Ctrl + o`直接调出`Outline`的quick view，然后通过搜索或者上下键选择来跳转到某一符号处。正是因为可以如此方便地调出quick outline，所以我一般会把`Editor`视图右边的辅助视图集窗口最小化以扩大代码区的面积。
+
+    ![quick outline](./pics/quick-outline.gif)
+
+- 继承关系（Hierarchy View）
+
+	选中类名然后敲`F4`，继承关系视图会出现在`Editor`底下的的视图集窗口里。然后在该视图下，可以看类的继承关系和接口的覆写关系。
+
+    ![hierarchy](./pics/hierarchy.gif)
+
+    上面示例中可以看到从`Hierarchy View`返回`Editor`需要切换视图。但是如果用`Ctrl + t`调出quick hierarchy，可以在浏览完继承关系后直接返回`Editor`的对应位置上。如下所示：
+
+    ![quick hierarchy](./pics/quick-hierarchy.gif)
+
+    Quick hierarchy是我最喜欢用的quick view，它可以让类的继承关系跳转变得非常快捷。而且当你在一个虚方法的签名上调出quick hierarchy，只会显示该接口被覆写的类层次。所以让我们记住这个快捷键`Ctrl + t`。
+
+### Navigate
+
+### Search
+
+### Edit
+
+### Others
+
+### Keys
 
 -- open file -- find resource -- find reference -- method invoke -- jump to defination -- ctrl + H -- new folder / file -- class inheritance -- function override -- rename class -- rename file/ move folder -- add include -- copy line ， move line -- comment -- recent files -- switch view -- format code -- rebuild index -- macro spread -- alt + shift + a --ctrl+m alt+？
 ctrl O, rebuild index, format code,
 
 find in file：ctrl j；ctrl k； ctrl f
+
+## Others
+
