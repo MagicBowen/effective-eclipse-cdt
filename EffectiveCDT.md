@@ -366,7 +366,7 @@ Perspective翻译过来是“透视图”，其实就是按照一定目的选择
 
 上面是菜单栏和工具栏，下面是由四部分组成的工作区域。最左边是`Project Explorer`视图，显示当前workspace中的所有project，通过它可以浏览每个project的目录树。中间的`Editor`视图是我们浏览、编辑代码的地方。`Editor`的右面和下面是一些辅助视图的集合窗口，例如常用的outline视图、console视图以及各种搜索结果视图等等都在这里，你可以根据习惯选择将哪些视图放在右面或者下面。`C/C++ Perspective`如此设置和排布目的是为了尽可能方便的进行代码开发。
 
-除了`C/C++ Perspective`，eclipse还定义了`Debug Perspective`、`Git Perspective`、`Planning Perspective`等等，每种perspective所选择的视图和排布都是为了不同的目的。例如在`Debug Perspective`下就没有`Project Explorer`视图，而多了`Debug`和`Variable`视图，而且`Editor`视图所占的区域也小很多。如此规划就是为了用户可以方便高效地debug。
+除了`C/C++ Perspective`，eclipse还定义了`Debug Perspective`、`Git Perspective`、`Planning Perspective`等等，每种perspective所选择的视图和排布都是为了不同的目的。例如在`Debug Perspective`下就没有`Project Explorer`视图，而多了`Debug`和`Variable`视图，而且`Editor`视图所占的区域也小很多。如此规划就是为了用户可以方便高效地进行debug。
 
 不同perspective之间进行切换的快捷键是`Ctrl + F8`。按住`Ctrl`后每敲一次`F8`，光标会移到下一个perspective；按住`Ctrl + Shift`后每敲一次`F8`光标会移到前一个perspective。如下图所示，通过快捷键在`C/C++ Perspective`和`Debug Perspective`之间切换。
 
@@ -393,13 +393,13 @@ Perspective翻译过来是“透视图”，其实就是按照一定目的选择
 
 ![create file](./pics/new-file.gif)
 
-上面介绍的`Alt + Shift + N`是会经常使用到的，利用它除了可以快速创建文件，还可以快速创建工程、目录等。除此之外还有如下的quick view也是非常常用的：
+上面介绍的`Alt + Shift + N`会被经常用到，因为它除了可以快速创建文件，还可以快速创建工程、目录等。除此之外还有如下的quick view也非常有用：
 
 - 文件大纲（Outline View）
 
-	文件大纲视图一般位于`C/C++ Perspective`的最右侧，通过该视图我们可以看到当前代码文件的大纲，可以直接跳到当前文件的任意符号处。
+	文件大纲视图一般位于`C/C++ Perspective`的最右侧，通过该视图我们可以看到当前文件的代码大纲，通过它可以直接跳到当前文件的任意符号处。
 
-    在`Editor`视图下我们可以通过`Ctrl + O`直接调出`Outline`的quick view，然后通过搜索或者上下键选择来跳转到某一符号处。正是因为可以如此方便地调出quick outline，所以我一般会把`Editor`视图右边的辅助视图集窗口最小化以扩大代码区的面积。
+    在`Editor`视图下我们可以通过`Ctrl + O`直接调出`Outline`的quick view，然后通过搜索或者上下键选择来跳转到本文件内的某一符号处。正是因为可以如此方便地调出quick outline，所以我一般会把`Editor`视图右边的辅助视图集窗口最小化以扩大代码区的面积。
 
     ![quick outline](./pics/quick-outline.gif)
 
@@ -409,7 +409,7 @@ Perspective翻译过来是“透视图”，其实就是按照一定目的选择
 
     ![hierarchy](./pics/hierarchy.gif)
 
-    上面示例中可以看到从`Hierarchy View`返回`Editor`需要切换视图焦点。但是如果用`Ctrl + T`调出quick hierarchy，则可以在浏览完继承关系后直接返回到`Editor`的对应位置上。如下所示：
+    从上面示例中可以看到，从`Hierarchy View`返回`Editor`需要切换视图焦点。但是如果用`Ctrl + T`调出quick hierarchy，则可以在浏览完继承关系后直接返回到`Editor`的对应位置上。如下所示：
 
     ![quick hierarchy](./pics/quick-hierarchy.gif)
 
@@ -440,9 +440,9 @@ Perspective翻译过来是“透视图”，其实就是按照一定目的选择
 Eclipse主要的搜索快捷键如下：
 
 - `Ctrl + Shift + G`：查找所有对符号的引用。
-- `Ctrl + Shift + H`：查找所有函数或者变量的调用点。
+- `Ctrl + Shift + H`：查找所有函数或者变量的调用点，显示出所有调用层次。
 - `Ctrl + F`：本文件内搜索，可以通过`Ctrl + k`和`Ctrl + Shift + k`在所有搜索结果中上下跳转。
-- `Ctrl + H`：工程内全局搜索。在弹出的对话框里面的`C/C++ Search`只在所有代码文件里面搜索，而`File Search`则是在所有文件内搜索。
+- `Ctrl + H`：工程内全局搜索。弹出的对话框里面的`C/C++ Search`只是在所有代码文件里面搜索，而`File Search`则是在所有文件内搜索。
 
 ### Edit
 
@@ -467,15 +467,25 @@ Eclipse主要的搜索快捷键如下：
 - `Ctrl + Alt + ↑`：将当前行向上复制
 - `Ctrl + Alt + ↓`：将当前行向下复制
 
-如下示例了选择了几行代码，然后使用`Ctrl + Alt + ↓`向下复制了选中行。
+如下示例中选择了几行代码，然后使用`Ctrl + Alt + ↓`向下复制了选中行。
 
 ![copy lines](./pics/copy-lines.gif)
 
-- `Alt + /`：自动提示、补全符号；包括自定义的快捷代码块。如前面全局配置的时候我们添加了`cn`的快捷代码块，如下我们敲`cn`后再敲`Alt + /`，它帮我们自动补全为“ClassName::”。
+- `Alt + /`：自动提示、补全符号，包括自定义的快捷代码块。如前面介绍全局配置的时候我们添加了`cn`的快捷代码块，如下我们敲`cn`后再敲`Alt + /`，它帮我们自动补全为“ClassName::”。
 
 ![auto class name](./pics/auto-cn.gif)
 
-除了上述基本的编辑快捷键外，还有一些很常用的专门针对C\++语言的快捷键。
+另外还有如下几个非常方便的快捷键：
+
+- `Ctrl + Shift + F`：格式化选中的代码
+- `Ctrl + Shift + X`：选中的代码转为全小写
+- `Ctrl + Shift + Y`：选中的代码转为全大写
+- `Ctrl + Alt + A`：进入或者退出列编辑模式
+
+列编辑模式有时会很有用，如下图所示：
+![colume edit](./pics/colume-edit.gif)
+
+除了上述快捷键外，还有一些是专门针对C/C\++语言特征的。
 
 - `Ctrl + Shift + N`：自动添加光标所在处符号对应的头文件。
 
@@ -485,15 +495,20 @@ Eclipse主要的搜索快捷键如下：
 
 ![auto macro](./pics/auto-macro.gif)
 
+- `Alt + Shift + R`：自动重命名
 
-### Others
+	Eclipse针对C\++的自动化重构支持的并不多，但是最常用的重命名`Alt + Shift + R`做得真心不错。如果你按照eclipse全局规则中约束的方式命名类和文件（前面全局配置中讲过如何修改规则），例如对于类名“ThreadPool”，对应的头文件命名为“ThreadPool.h”，源文件命名“ThreadPool.cpp”，测试文件名为“TestThreadPool.cpp”，那么对类重命名后对应的头文件、源文件和测试文件以及所有的`#include`对应的文件名都会一起发生改变。
 
-### Keys
+    ![rename](./pics/rename.gif)
 
--- open file -- find resource -- find reference -- method invoke -- jump to defination -- ctrl + H -- new folder / file -- class inheritance -- function override -- rename class -- rename file/ move folder -- add include -- copy line ， move line -- comment -- recent files -- switch view -- format code -- rebuild index -- macro spread -- alt + shift + a --ctrl+m alt+？
-ctrl O, rebuild index, format code,
+	这里再补充一下，如果你想调整头文件或者目录的位置，最好使用`Project Explorer`视图中右键菜单里面的`Move`选项，这样所有更改路径的头文件的`#include`路径会一起发生变化。
 
-find in file：ctrl j；ctrl k； ctrl f
+#### Others
 
-## Others
+前面介绍的快捷键只是我挑选出来最常使用的一部分，但是相信熟练掌握这些足以让你的编码效率得到较大提高。补充说明一下，上述所有快捷键适合Linux和Windows系统，Mac下得要做一些调整，具体请问搜索引擎。
+
+## Conclusion
+
+本文总结了个人长期使用eclipse CDT进行C\++代码开发的一些经验，包括eclipse全局配置、工程配置以及常用的高效操作技巧。希望本文最终可以帮助到大家，使得每个人都可以借助eclipse这个强大的IDE去更好地使用C\++这门强大的语言解决问题。
+
 
