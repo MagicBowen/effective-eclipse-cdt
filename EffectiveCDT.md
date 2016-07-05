@@ -236,7 +236,7 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 ## Project Configuration
 
-由于前面介绍的全局配置会作为工程的默认配置，所以像代码风格之类的配置，如果工程没有特殊需要一般不用再配置。工程属性里面主要关注于工程的构建选项。只要配置好了各种构建参数，就可以通过eclipse来构建工程，这时工程代码也能够被eclipse正常解析（对于我个人，更加喜欢用构建脚本，在eclipse里进行工程配置的主要目的一般是为了让其能够正确解析代码）。
+由于前面介绍的全局配置会作为工程的默认配置，所以像代码风格之类的配置，如果工程没有特殊需要一般不用再配置。工程属性里面主要关注于工程的构建选项。只要配置好了各种构建参数，就可以通过eclipse来构建工程，这时工程代码也能够被eclipse正常解析（对于我个人，更加喜欢用脚本构建，在eclipse里进行工程配置主要是为了让其能够正确解析代码）。
 
 ### 新建工程
 
@@ -352,7 +352,22 @@ code-formatter.xml是formatter的模板，在`Window -> Preferences -> C/C++ -> 
 
 Eclipse为每个工程生成的所有配置其实都在工程目录下的`.project`和`.cproject`文件里。将这两个文件共享给别人，放在相对于工程代码相同的位置，通过`File -> import -> General -> Existing Projects info Workspace`可以直接将eclipse工程导入。
 
-## Effective Usage
+## Efficient Usage
+
+### 基本概念
+
+![workbench](./pics/workbench.jpg)
+
+如上图所示的eclipse workbench默认布局，上面是菜单栏和工具栏，下面是由四部分组成的工作区域。最左边是`Project Explorer`视图，显示当前workspace中的所有project，可以浏览每个project的目录树。中间的`Editor`视图是我们浏览、编辑代码的地方。`Editor`的右面和下面是辅助视图集合，例如常用的outline视图、console视图以及各种搜索结果视图等等，你可以根据习惯选择将哪些视图放在右面或者下面。
+
+浏览和开发代码的时候我们经常需要在各个视图之间转移焦点，比如需要从正在编辑代码的`Editor`视图跳转到`Project Explorer`视图去增加一个目录或者文件，再比如搜索了某一个函数的调用关系后需要从`Editor`视图跳转到下方的`Call Hierarchy`视图选择某一调用函数。
+
+在这里我们介绍的第一个提高效率的方法就是使用快捷键`Ctrl + F7`进行视图切换，这是一个很提效的技巧！很多人在`Editor`区域将快捷键使用地很好，但是一旦要切换视图就去抓鼠标。掌握了这个快捷键基本上可以让很多人直接过度到全键盘！
+
+
+## Others
 
 -- open file -- find resource -- find reference -- method invoke -- jump to defination -- ctrl + H -- new folder / file -- class inheritance -- function override -- rename class -- rename file/ move folder -- add include -- copy line ， move line -- comment -- recent files -- switch view -- format code -- rebuild index -- macro spread -- alt + shift + a --ctrl+m alt+？
 ctrl O, rebuild index, format code,
+
+find in file：ctrl j；ctrl k； ctrl f
