@@ -80,4 +80,4 @@ Eclipse-cdt是我个人目前最喜欢的c\++ IDE！ Eclipse-cdt是eclipse针对
 
 上面是本人对IDE的一些看法，分享了我自己使用各种c\++ IDE的切身感受。由于c\++的应用环境比较多样，构建过程比较自由，依赖的外部条件比较多，而且语言也相对复杂，很多语法例如宏、模板特化、函数重载等都会增加IDE的解析难度，所以做好一款c\++ IDE还是很难的，必须得承认目前为止还没有任何一款能够做到java领域的成熟度。但还是得说新版本的eclipse-cdt在各个方面做的还是很不错的，如果能够合理的配置eclipse-cdt，并且熟练掌握它的操作方式，绝对可以帮助你提高c\++的开发效率。
 
-关于如何配置eclipse CDT，以及高效使用技巧，请参考文章 [EffectiveCDT](https://github.com/MagicBowen/eclipse-config/blob/master/EffectiveCDT.md)。
+关于如何配置eclipse CDT，以及高效使用技巧，请参考文章`doc/eclipse-cdt.md`。
